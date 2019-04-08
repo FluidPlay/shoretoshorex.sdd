@@ -9,8 +9,8 @@ local mapinfo = {
    maphardness     = 10,
    notDeformable   = false,
    gravity         = 120,
-   tidalStrength   = 20,
-   maxMetal        = 1.0,
+   tidalStrength   = 15, --20
+   maxMetal        = 1.175, --1.0,
    extractorRadius = 100,
    voidWater       = false,
    voidGround      = false,
@@ -29,11 +29,11 @@ local mapinfo = {
 --		splatDetailNormalTex4 = "rock_77_highpass_dnts.tga";
 --		splatDistrTex = "detaildist.png",
 		--skyReflectModTex = "",
-		detailNormalTex = "hourglass_n.bmp",
+		detailNormalTex = "normal.bmp",
 		--lightEmissionTex = "",
 	},   
 
--- [[Hourglass]]	atmosphere = {
+--[[<Hourglass>	atmosphere = {
 		--FogColor={0.63, 0.74, 0.28};
 		--CloudColor={1, 0.89, 0.7};
 		--SkyColor={0.63, 0.74, 0.28};
@@ -42,16 +42,16 @@ local mapinfo = {
 		--CloudDensity=0.3;
 		--MinWind=6;
 		--MaxWind=11;
-	--},
+	}, ]]
 	
-	splats = {
+--[[	splats = {
 		texScales = {0.01, 0.015, 0.01, 0.003}, --//cliffs, moss, grass, sand
 		texMults  = {0.3, 0.4, 0.42, 0.4},
-	},
+	}, ]]
 
 	atmosphere = {
-		minWind      = 5.0,
-		maxWind      = 25.0,
+		minWind      = 9.0,
+		maxWind      = 24.0,
 
 		fogStart     = 0.7,
 		fogEnd       = 1.0,
@@ -66,7 +66,7 @@ local mapinfo = {
 		cloudColor   = {1.0, 1.0, 1.0},
 	},	
 
-   terrainTypes = {
+	terrainTypes = {
 --      [0] = {
          --name = "Earth",
          --hardness = 15,
@@ -216,15 +216,12 @@ local mapinfo = {
       [9] = {startPos = {x = 6690, z = 970}},  
       [10] = {startPos = {x = 7950, z = 2560}},
       [11] = {startPos = {x = 6350, z = 2910}},   
-	  [12] = {startPos = {x = 7790, z = 9210}},
-      [13] = {startPos = {x = 6430, z = 8490}},  
-	  [14] = {startPos = {x = 7180, z = 6860}},
-      [15] = {startPos = {x = 6750, z = 5760}},  
+	  [12] = {startPos = {x = 7790, z = 9210}}, 
    },
    
 smf = {
-      minHeight = -350,
-      maxHeight = 550,
+      minHeight = -25, -- -350, -110
+      maxHeight = 325, --550, 305
 	},
 }
 return mapinfo

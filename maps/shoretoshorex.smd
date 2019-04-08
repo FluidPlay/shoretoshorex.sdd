@@ -1,0 +1,157 @@
+[MAP]
+{
+	Description=Shore To Shore X * 12 Players * by MaDDoX;
+	TidalStrength=20;
+	Gravity=120;
+	MaxMetal=1.15;
+	ExtractorRadius=100;
+	MapHardness=10;
+	AutoShowMetal=1;
+	
+	[ATMOSPHERE]
+	{
+		FogColor=0.63 0.74 0.28;
+		CloudColor=1 0.89 0.7;
+		SkyColor=0.76 0.83 1;
+		SunColor=1 0.99 0.81;
+		FogStart=.9;
+		CloudDensity=0.3;
+		MinWind=7;
+		MaxWind=13;
+	}
+	
+	[WATER]
+	{
+		WaterSurfaceColor=0.44 0.66 1;
+		WaterPlaneColor=0.76 0.88 1;
+		WaterBaseColor=0.84 0.94 1;
+		WaterAbsorb=0.7 0.7 0.7;
+		WaterMinColor=1 1 1;
+		WaterDamage=;		
+	}
+	
+	[LIGHT]
+	{
+		SunDir=0.008 0.556 -0.444;
+		GroundAmbiantColor=0.5 0.5 0.5;
+		GroundSunColor=1 1 1;
+		UnitAmbiantColor=1 0.93 0.67;
+		UnitSunColor=1 0.93 0.67;
+		SpecularSunColor=1 1 1;		
+	}
+
+	[TERRAINTYPE0]
+	{
+		name=Earth;
+		hardness=15;
+		tankmovespeed=1;
+		kbotmovespeed=1;
+		hovermovespeed=1;
+		shipmovespeed=1;
+	}
+	[TERRAINTYPE50]
+	{
+		name=LowerLands;
+		hardness=15;
+		tankmovespeed=1.1;
+		kbotmovespeed=1;
+		hovermovespeed=1;
+		shipmovespeed=1;
+	}
+	
+	[TERRAINTYPE100]
+	{
+		name=RockSand;
+		hardness=13;
+		tankmovespeed=1;
+		kbotmovespeed=0.9;
+		hovermovespeed=1;
+		shipmovespeed=1;
+	}
+	
+	[TERRAINTYPE150]
+	{
+		name=GrassnBushes;
+		hardness=20;
+		tankmovespeed=0.9;
+		kbotmovespeed=1;
+		hovermovespeed=0.9;
+		shipmovespeed=1;
+	}
+	
+	[TERRAINTYPE255]
+	{
+		name=Rock;
+		hardness=50;
+		tankmovespeed=1;
+		kbotmovespeed=1;
+		hovermovespeed=1;
+		shipmovespeed=1;
+	}
+	
+	[TEAM0]
+	{
+		StartPosX=282;
+		StartPosZ=8278;
+	}
+	[TEAM1]
+	{
+		StartPosX=1358;
+		StartPosZ=8341;
+	}
+	[TEAM2]
+	{
+		StartPosX=240;
+		StartPosZ=6902;
+	}
+	[TEAM3]
+	{
+		StartPosX=1650;
+		StartPosZ=6589;
+	}	
+	[TEAM4]
+	{
+		StartPosX=359;
+		StartPosZ=939;
+	}
+	[TEAM5]
+	{
+		StartPosX=1578;
+		StartPosZ=1573;
+	}	
+	[TEAM6]
+	{
+		StartPosX=922;
+		StartPosZ=3038;
+	}
+	[TEAM7]
+	{
+		StartPosX=1289;
+		StartPosZ=4001;
+	}	
+	[TEAM8]
+	{
+		StartPosX=6932;
+		StartPosZ=901;
+	}
+	[TEAM9]
+	{
+		StartPosX=5851;
+		StartPosZ=859;
+	}
+	[TEAM10]
+	{
+		StartPosX=6969;
+		StartPosZ=2315;
+	}
+	[TEAM11]
+	{
+		StartPosX=5562;
+		StartPosZ=2602;
+	}	
+	[TEAM12]
+	{
+		StartPosX=6831;
+		StartPosZ=8293;
+	}
+}
