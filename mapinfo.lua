@@ -27,6 +27,12 @@ local mapinfo = {
 --		splatDetailNormalTex2 = "earth_NORM.tga";
 --		splatDetailNormalTex3 = "dirt_265_dnts_u8888.dds";
 --		splatDetailNormalTex4 = "rock_77_highpass_dnts.tga";
+		splatDistrTex = "splatmap.tga",
+		splatDetailNormalDiffuseAlpha = 1,
+		splatDetailNormalTex1 = "cliff_nrm_height_lo.tga";
+		splatDetailNormalTex2 = "dirt_nrm_height_lo.tga";
+		splatDetailNormalTex3 = "sand_nrm_height_lo.tga";
+		splatDetailNormalTex4 = "sandstones_nrm_height_lo.tga";
 --		splatDistrTex = "detaildist.png",
 		--skyReflectModTex = "",
 		detailNormalTex = "normal.tga",
@@ -44,10 +50,10 @@ local mapinfo = {
 		--MaxWind=11;
 	}, ]]
 	
---[[	splats = {
-		texScales = {0.01, 0.015, 0.01, 0.003}, --//cliffs, moss, grass, sand
-		texMults  = {0.3, 0.4, 0.42, 0.4},
-	}, ]]
+	splats = {
+		texScales = {0.004, 0.007, 0.008, 0.0015}, -- cliff, dirt, sand, sandstones
+		texMults  = {0.18, 0.36, 0.36, 0.026},
+	},
 
 	atmosphere = {
 		minWind      = 9.0,
@@ -204,7 +210,7 @@ local mapinfo = {
 	},
 
    teams = {
-      [0] = {startPos = {x = 320, z = 320}},
+      [0] = {startPos = {x = 320, z = 9200}},
       [1] = {startPos = {x = 1536, z = 9256}},   
 	  [2] = {startPos = {x = 280, z = 7680}},
       [3] = {startPos = {x = 1900, z = 7340}},  
@@ -216,7 +222,7 @@ local mapinfo = {
       [9] = {startPos = {x = 6690, z = 970}},  
       [10] = {startPos = {x = 7950, z = 2560}},
       [11] = {startPos = {x = 6350, z = 2910}},   
-	  [12] = {startPos = {x = 7790, z = 9210}}, 
+	  [12] = {startPos = {x = 7790, z = 9210}},
    },
    
 smf = {
