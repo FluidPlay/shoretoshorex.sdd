@@ -252,8 +252,8 @@ local mapinfo = {
 				[6] = "sand_dfs_metal_lo.dds",
 				[7] = "sand_nrm_height_lo.tga",
 				--- Seabed
-				[8] ="sandstones_dfs_metal_lo.tga",
-				[9] ="sandstones_nrm_metal_lo.tga",
+				[8] ="sandstones_dfs_metal_lo.dds",
+				[9] ="sandstones_nrm_height_lo.tga",
 				-- Splatmap
 				[20]="splatmap.tga",
 		   },
