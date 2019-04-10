@@ -16,7 +16,7 @@ local mapinfo = {
    voidGround      = false,
    autoShowMetal   = true,
    
-	resources = {
+   resources = {
 		--grassBladeTex = "",
 		--grassShadingTex = "",
 --		detailTex = "detailtexblurred.bmp",
@@ -27,12 +27,12 @@ local mapinfo = {
 --		splatDetailNormalTex2 = "earth_NORM.tga";
 --		splatDetailNormalTex3 = "dirt_265_dnts_u8888.dds";
 --		splatDetailNormalTex4 = "rock_77_highpass_dnts.tga";
-		splatDistrTex = "splatmap.tga",
-		splatDetailNormalDiffuseAlpha = 1,
-		splatDetailNormalTex1 = "cliff_nrm_height_lo.tga";
-		splatDetailNormalTex2 = "dirt_nrm_height_lo.tga";
-		splatDetailNormalTex3 = "sand_nrm_height_lo.tga";
-		splatDetailNormalTex4 = "sandstones_nrm_height_lo.tga";
+		--splatDistrTex = "splatmap.tga",
+		--splatDetailNormalDiffuseAlpha = 1,
+		--splatDetailNormalTex1 = "cliff_nrm_height_lo.tga";
+		--splatDetailNormalTex2 = "dirt_nrm_height_lo.tga";
+		--splatDetailNormalTex3 = "sand_nrm_height_lo.tga";
+		--splatDetailNormalTex4 = "sandstones_nrm_height_lo.tga";
 --		splatDistrTex = "detaildist.png",
 		--skyReflectModTex = "",
 		detailNormalTex = "normal.tga",
@@ -50,12 +50,12 @@ local mapinfo = {
 		--MaxWind=11;
 	}, ]]
 	
-	splats = {
+   splats = {
 		texScales = {0.004, 0.007, 0.008, 0.0015}, -- cliff, dirt, sand, sandstones
 		texMults  = {0.18, 0.36, 0.36, 0.026},
 	},
 
-	atmosphere = {
+   atmosphere = {
 		minWind      = 9.0,
 		maxWind      = 24.0,
 
@@ -72,7 +72,7 @@ local mapinfo = {
 		cloudColor   = {1.0, 1.0, 1.0},
 	},	
 
-	terrainTypes = {
+   terrainTypes = {
 --      [0] = {
          --name = "Earth",
          --hardness = 15,
@@ -141,7 +141,7 @@ local mapinfo = {
 		},
 	},
 
-	lighting = {
+   lighting = {
 		--// dynsun
 		sunStartAngle = 0.0,
 		sunOrbitTime  = 1440.0,
@@ -160,7 +160,7 @@ local mapinfo = {
 		specularExponent    = 100.0,
 	},
 
-	water = {
+   water = {
 		damage =  0.0,
 
 		repeatX = 0.0,
@@ -224,10 +224,214 @@ local mapinfo = {
       [11] = {startPos = {x = 6350, z = 2910}},   
 	  [12] = {startPos = {x = 7790, z = 9210}},
    },
-   
+
+   custom = {
+	   fog = {
+		   color    = {0.6, 0.6, 0.6},
+		   height   = "11%", --// allows either absolue sizes or in percent of map's MaxHeight
+		   fogatten = 0.008,
+	   },
+	   --precipitation = {
+		--   weather = "snow",
+		--   density   = 17500,
+		--   size      = 1.2,
+		--   speed     = 20,
+		--   windscale = 1,
+		--   texture   = 'LuaUI/effects/snowflake.png',
+	   --},
+	   pbr = {
+		   enabled = true,
+		   textures = {
+			   --- Hilltops
+			   [2] = "dirt_dfs_metal_lo.dds",
+			   [3] = "dirt_nrm_height_lo.tga",
+			   	--- Cliff Sides
+				[4] = "cliff_dfs_metal_lo.dds", --diffuse RGB + metallic A
+				[5] = "cliff_nrm_height_lo.tga", -- Normal RGB + height A"
+				--- Beach Sand
+				[6] = "sand_dfs_metal_lo.dds",
+				[7] = "sand_nrm_height_lo.tga",
+				--- Seabed
+				[8] ="sandstones_dfs_metal_lo.tga",
+				[9] ="sandstones_nrm_metal_lo.tga",
+				-- Splatmap
+				[20]="splatmap.tga",
+		   },
+		   --splatDetailNormalDiffuseAlpha = 1,
+		   --splatDetailNormalTex1 = "cliff_nrm_height_lo.tga";
+		   --splatDetailNormalTex2 = "dirt_nrm_height_lo.tga";
+		   --splatDetailNormalTex3 = "sand_nrm_height_lo.tga";
+		   --splatDetailNormalTex4 = "sandstones_nrm_height_lo.tga";
+		   definitions = {
+			   ["SUN_COLOR"] = "vec3(1.0)",
+			   ["SHADOW_SAMPLES"] = "8",
+			   --["WEIGHT_CUTOFF"] = "0.3",
+			   ["MAT_BLENDING_HEIGHT_SMOOTHNESS"] = "0.2",
+			   --["PBR_SCHLICK_SMITH_GGX"] = "PBR_SCHLICK_SMITH_GGX_THIN",
+			   --["PBR_BRDF_DIFFUSE"] = "PBR_DIFFUSE_LAMBERT",
+			   --["IBL_DIFFUSECOLOR"] = "vec3(0.6, 0.77, 0.77)",
+			   --["IBL_SPECULARCOLOR"] = "vec3(0.6, 0.77, 0.77)",
+			   --["IBL_DIFFUSECOLOR"] = "vec3(1.0)",
+			   --["IBL_SPECULARCOLOR"] = "vec3(1.0)",
+
+			   --["OUTPUT_EXPOSURE(preExpColor)"] = "1.4 * preExpColor",
+			   --["OUTPUT_TONEMAPPING(preTMColor)"] = "SteveMTM2(preTMColor)"
+		   },
+		   ----- Hilltops (Red)
+		   --[2] = "dirt_dfs_metal_lo.dds",
+		   --[3] = "dirt_nrm_height_lo.tga",
+		   ----- Cliff Sides (Green)
+		   --[4] = "cliff_dfs_metal_lo.dds", --diffuse RGB + metallic A
+		   --[5] = "cliff_nrm_height_lo.tga", -- Normal RGB + height A"
+		   ----- Beach Sand (Blue)
+		   --[6] = "sand_dfs_metal_lo.dds",
+		   --[7] = "sand_nrm_height_lo.tga",
+		   ----- Seabed (Alpha)
+		   --[8] ="sandstones_dfs_metal_lo.tga",
+		   --[9] ="sandstones_nrm_metal_lo.tga",
+		   ---- Splatmap
+		   --[20]="splatmap.tga",
+		   splats = {
+			   --[[
+                               {
+                                   workflow = "SPECULAR",
+                                   --specularF0 = "0.01",
+                                   --weight = "1.0",
+                                   --weight = "texture(tex20, (mapTexCoords)).g",
+                                   --weight = "1.0",
+                                   weight = "mapTexCoords.x",
+                                   diffuseColor = "fromSRGB(texture(tex2, 15.0 * mapTexCoords).rgb)",
+                                   specularColor = "fromSRGB(texture(tex3, 15.0 * mapTexCoords).rgb)",
+                                   occlusion = "texture(tex5, 15.0 * mapTexCoords).r",
+                                   --blendNormal = "OGLUnpackNormals(texture(tex4, 15.0 * mapTexCoords).xyz)",
+                                   --blendNormalStrength = "vec3(0.0)",
+                                   roughness = "0.0",
+
+
+                                   --height = "texture(tex10, 15.0 * mapTexCoords).r",
+                                   height = "0.1",
+                               },
+               ]]--
+			   {   --- Hilltops (Red)
+				   workflow = "METALNESS",
+				   weight = "texture(tex20, (mapTexCoords)).r",
+				   baseColor = "texture(tex2, 1.0 * mapTexCoords).rgb",
+				   roughness = "texture(tex2, 1.0 * mapTexCoords).a",
+				   blendNormal = "DXUnpackNormals(texture(tex3, 1.0 * mapTexCoords).rgb)",
+				   height = "texture(tex3, 1.0 * mapTexCoords).a",
+
+				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
+				   metalness = "0.0",
+				   specularF0 = "0.004",
+			   },
+			   {   --- Cliff Sides (Green)
+				   workflow = "METALNESS",
+				   weight = "texture(tex20, (mapTexCoords)).g",
+				   baseColor = "texture(tex4, 1.0 * mapTexCoords).rgb",
+				   roughness = "texture(tex4, 1.0 * mapTexCoords).a",
+				   blendNormal = "DXUnpackNormals(texture(tex5, 1.0 * mapTexCoords).rgb)",
+				   height = "texture(tex5, 1.0 * mapTexCoords).a",
+
+				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
+				   metalness = "0.0",
+				   specularF0 = "0.004",
+			   },
+			   {   --- Beach Sand (Blue)
+				   workflow = "METALNESS",
+				   weight = "texture(tex20, (mapTexCoords)).b",
+				   baseColor = "texture(tex6, 1.0 * mapTexCoords).rgb",
+				   roughness = "texture(tex6, 1.0 * mapTexCoords).a",
+				   blendNormal = "DXUnpackNormals(texture(tex7, 1.0 * mapTexCoords).rgb)",
+				   height = "texture(tex7, 1.0 * mapTexCoords).a",
+
+				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
+				   metalness = "0.0",
+				   specularF0 = "0.004",
+			   },
+			   {   --- Seabed (Alpha)
+				   workflow = "METALNESS",
+				   weight = "texture(tex20, (mapTexCoords)).a",
+				   baseColor = "texture(tex8, 1.0 * mapTexCoords).rgb",
+				   roughness = "texture(tex8, 1.0 * mapTexCoords).a",
+				   blendNormal = "DXUnpackNormals(texture(tex9, 1.0 * mapTexCoords).rgb)",
+				   height = "texture(tex9, 1.0 * mapTexCoords).a",
+
+				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
+				   metalness = "0.0",
+				   specularF0 = "0.004",
+			   },
+			   --{ },
+			   --{ },
+		   },
+	   },
+   },		--custom
+
 smf = {
       minHeight = -200, -- -25, -350, -110
       maxHeight = 320, --550, 325, 305
+	  smtFileName0 = "maps/shoretoshorex.smt",
 	},
 }
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Helper
+
+local function lowerkeys(ta)
+	local fix = {}
+	for i,v in pairs(ta) do
+		if (type(i) == "string") then
+			if (i ~= i:lower()) then
+				fix[#fix+1] = i
+			end
+		end
+		if (type(v) == "table") then
+			lowerkeys(v)
+		end
+	end
+
+	for i=1,#fix do
+		local idx = fix[i]
+		ta[idx:lower()] = ta[idx]
+		ta[idx] = nil
+	end
+end
+
+lowerkeys(mapinfo)
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Map Options
+
+if (Spring and Spring.GetMapOptions) then
+	local function tmerge(t1, t2)
+		for i,v in pairs(t2) do
+			if (type(v) == "table") then
+				t1[i] = t1[i] or {}
+				tmerge(t1[i], v)
+			else
+				t1[i] = v
+			end
+		end
+	end
+
+	getfenv()["mapinfo"] = mapinfo
+	local files = VFS.DirList("mapconfig/mapinfo/", "*.lua")
+	table.sort(files)
+	for i=1,#files do
+		local newcfg = VFS.Include(files[i])
+		if newcfg then
+			lowerkeys(newcfg)
+			tmerge(mapinfo, newcfg)
+		end
+	end
+	getfenv()["mapinfo"] = nil
+end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 return mapinfo
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
