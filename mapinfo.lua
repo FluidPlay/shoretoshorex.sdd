@@ -315,10 +315,10 @@ local mapinfo = {
 			   {   --- Hilltops (Red)
 				   workflow = "METALNESS",
 				   weight = "texture(tex20, (mapTexCoords)).r",
-				   baseColor = "texture(tex2, 1.0 * mapTexCoords).rgb",
-				   roughness = "texture(tex2, 1.0 * mapTexCoords).a",
-				   blendNormal = "DXUnpackNormals(texture(tex3, 1.0 * mapTexCoords).rgb)",
-				   height = "texture(tex3, 1.0 * mapTexCoords).a",
+				   baseColor = "texture(tex2, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb",
+				   roughness = "texture(tex2, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
+				   blendNormal = "DXUnpackNormals(texture(tex3, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb)",
+				   height = "texture(tex3, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
 
 				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
 				   metalness = "0.0",
@@ -327,10 +327,10 @@ local mapinfo = {
 			   {   --- Cliff Sides (Green)
 				   workflow = "METALNESS",
 				   weight = "texture(tex20, (mapTexCoords)).g",
-				   baseColor = "texture(tex4, 1.0 * mapTexCoords).rgb",
-				   roughness = "texture(tex4, 1.0 * mapTexCoords).a",
-				   blendNormal = "DXUnpackNormals(texture(tex5, 1.0 * mapTexCoords).rgb)",
-				   height = "texture(tex5, 1.0 * mapTexCoords).a",
+				   baseColor = "texture(tex4, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb",
+				   roughness = "texture(tex4, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
+				   blendNormal = "DXUnpackNormals(texture(tex5, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb)",
+				   height = "texture(tex5, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
 
 				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
 				   metalness = "0.0",
@@ -339,10 +339,10 @@ local mapinfo = {
 			   {   --- Beach Sand (Blue)
 				   workflow = "METALNESS",
 				   weight = "texture(tex20, (mapTexCoords)).b",
-				   baseColor = "texture(tex6, 1.0 * mapTexCoords).rgb",
-				   roughness = "texture(tex6, 1.0 * mapTexCoords).a",
-				   blendNormal = "DXUnpackNormals(texture(tex7, 1.0 * mapTexCoords).rgb)",
-				   height = "texture(tex7, 1.0 * mapTexCoords).a",
+				   baseColor = "texture(tex6, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb",
+				   roughness = "texture(tex6, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
+				   blendNormal = "DXUnpackNormals(texture(tex7, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb)",
+				   height = "texture(tex7, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
 
 				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
 				   metalness = "0.0",
@@ -351,10 +351,10 @@ local mapinfo = {
 			   {   --- Seabed (Alpha)
 				   workflow = "METALNESS",
 				   weight = "texture(tex20, (mapTexCoords)).a",
-				   baseColor = "texture(tex8, 1.0 * mapTexCoords).rgb",
-				   roughness = "texture(tex8, 1.0 * mapTexCoords).a",
-				   blendNormal = "DXUnpackNormals(texture(tex9, 1.0 * mapTexCoords).rgb)",
-				   height = "texture(tex9, 1.0 * mapTexCoords).a",
+				   baseColor = "texture(tex8, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb",
+				   roughness = "texture(tex8, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
+				   blendNormal = "DXUnpackNormals(texture(tex9, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb)",
+				   height = "texture(tex9, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
 
 				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
 				   metalness = "0.0",
