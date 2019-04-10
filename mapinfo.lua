@@ -65,7 +65,7 @@ local mapinfo = {
 
 		sunColor     = {1.0, 0.8, 0.8},
 		skyColor     = {0.1, 0.15, 0.5},
-		skyDir       = {1.0, 0.8, 1.0},
+		skyDir       = {0.5, 0.8, 0.5}, --1.0, 0.8, 1.0
 		skyBox       = "",
 
 		cloudDensity = 0.1,
@@ -149,7 +149,7 @@ local mapinfo = {
 
 		--// unit & ground lighting
 		groundAmbientColor  = {0.2, 0.2, 0.34},
-		groundDiffuseColor  = {0.9, 0.9, 0.9},
+		groundDiffuseColor  = {0.1, 0.1, 0.1},
 		groundSpecularColor = {0.5, 0.5, 0.5},
 		groundShadowDensity = 0.8,
 		unitAmbientColor    = {0.4, 0.4, 0.4},
@@ -263,7 +263,7 @@ local mapinfo = {
 		   --splatDetailNormalTex3 = "sand_nrm_height_lo.tga";
 		   --splatDetailNormalTex4 = "sandstones_nrm_height_lo.tga";
 		   definitions = {
-			   ["SUN_COLOR"] = "vec3(1.0)",
+			   ["SUN_COLOR"] = "vec3(0.8, 0.3, 0.15)",
 			   ["SHADOW_SAMPLES"] = "8",
 			   --["WEIGHT_CUTOFF"] = "0.3",
 			   ["MAT_BLENDING_HEIGHT_SMOOTHNESS"] = "0.2",
@@ -316,19 +316,21 @@ local mapinfo = {
 				   workflow = "METALNESS",
 				   weight = "texture(tex20, (mapTexCoords)).r",
 				   baseColor = "texture(tex2, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb",
-				   roughness = "texture(tex2, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
+				   --roughness = "texture(tex2, vec2(7.666 * -16.0, 1.0 * -16.0) * mapTexCoords).a",
+                   roughness = "0.0",
 				   blendNormal = "DXUnpackNormals(texture(tex3, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb)",
 				   height = "texture(tex3, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
 
 				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
-				   metalness = "0.0",
-				   specularF0 = "0.004",
+				   metalness = "0.5", --0.0
+				   specularF0 = "0.2", --0.004
 			   },
 			   {   --- Cliff Sides (Green)
 				   workflow = "METALNESS",
 				   weight = "texture(tex20, (mapTexCoords)).g",
 				   baseColor = "texture(tex4, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb",
-				   roughness = "texture(tex4, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
+				   --roughness = "texture(tex4, vec2(7.666 * -16.0, 1.0 * -16.0) * mapTexCoords).a",
+                   roughness = "0.0",
 				   blendNormal = "DXUnpackNormals(texture(tex5, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb)",
 				   height = "texture(tex5, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
 
@@ -340,7 +342,8 @@ local mapinfo = {
 				   workflow = "METALNESS",
 				   weight = "texture(tex20, (mapTexCoords)).b",
 				   baseColor = "texture(tex6, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb",
-				   roughness = "texture(tex6, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
+				   --roughness = "texture(tex6, vec2(7.666 * -16.0, 1.0 * -16.0) * mapTexCoords).a",
+                   roughness = "0.0",
 				   blendNormal = "DXUnpackNormals(texture(tex7, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb)",
 				   height = "texture(tex7, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
 
@@ -352,9 +355,10 @@ local mapinfo = {
 				   workflow = "METALNESS",
 				   weight = "texture(tex20, (mapTexCoords)).a",
 				   baseColor = "texture(tex8, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb",
-				   roughness = "texture(tex8, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
-				   blendNormal = "DXUnpackNormals(texture(tex9, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).rgb)",
-				   height = "texture(tex9, vec2(7.666 * 16.0, 1.0 * 16.0) * mapTexCoords).a",
+				   --roughness = "texture(tex8, vec2(7.666 * -16.0, 1.0 * -16.0) * mapTexCoords).a",
+                   roughness = "1.0",
+				   blendNormal = "OGLUnpackNormals(texture(tex9, vec2(7.666 * 16.0, 1.0 * 16.0) * flipVertically(mapTexCoords)).rgb)",
+				   height = "texture(tex9, vec2(7.666 * 16.0, 1.0 * 16.0) * flipVertically(mapTexCoords)).a",
 
 				   --occlusion = "texture(tex5, 1.0 * mapTexCoords).r",
 				   metalness = "0.0",
