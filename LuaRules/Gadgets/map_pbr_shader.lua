@@ -679,6 +679,17 @@ local function BindTextures()
 	end
 end
 
+local function UnbindTextures()
+	for i = 27, 31 do
+		gl.Texture(i, false)
+	end
+	if boundTexUnits then
+		for tun, _ in pairs(boundTexUnits) do
+			gl.Texture(tun, false)
+		end
+	end
+end
+
 -- Shadow matrix and shadow params are wrong here!!!
 -- Use gadget:DrawWorldShadow() for shadows instead
 -- TODO make sure DrawGroundPreForward is mapped
@@ -688,6 +699,12 @@ function gadget:DrawGroundPreForward()
 			UpdateSomeUniforms()
 			BindTextures()
 		end)
+	end
+end
+
+function gadget:DrawGroundPostForward()
+	if fwdShaderObjValid then
+		UnbindTextures()
 	end
 end
 

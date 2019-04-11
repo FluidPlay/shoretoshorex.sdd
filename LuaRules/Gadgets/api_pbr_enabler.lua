@@ -30,6 +30,7 @@ if (not gadgetHandler:IsSyncedCode()) then --unsynced gadget
 	function gadget:Initialize()
 		Spring.SetConfigInt("CubeTexGenerateMipMaps", 1)
 		Spring.SetConfigInt("CubeTexSizeReflection", 2048)
+		Spring.SetConfigInt("TextureMemPoolSize", 256)
 		local genLutClass = VFS.Include("Luarules/Gadgets/Include/GenBrdfLut.lua")
 		if genLutClass then
 			genLut = genLutClass(BRDFLUT_TEXDIM, BRDFLUT_GOPTION)
